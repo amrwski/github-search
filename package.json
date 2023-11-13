@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -13,6 +11,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "test": "vitest",
     "serve": "vite preview"
   },
   "eslintConfig": {
@@ -35,13 +34,20 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^6.1.4",
+    "@testing-library/react": "^14.1.0",
+    "@types/jest": "^29.5.8",
+    "@types/node": "^20.9.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react": "^4.1.1",
     "eslint": "^8.53.0",
     "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jsdom": "^22.1.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^0.34.6"
   }
 }
