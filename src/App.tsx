@@ -1,9 +1,10 @@
 import "./App.css";
+import { SearchBar } from "./components/SearchBar";
 
 const App = () => {
   return (
     <div className="App">
-      <h1>Hello!</h1>
+      <SearchBar />
     </div>
   );
 };
