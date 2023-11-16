@@ -7,24 +7,28 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.container {
+.header__container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.container__input {
+.header__input {
   width: 534px;
   height: 30px;
   border: none;
   outline: none;
   padding: 0;
-  margin-left: 7px;
+  margin: 0 14px 0 7px;
   font-family: Roboto, sans-serif;
   font-size: 21px;
   line-height: 150%;
 }
 
-.container__input::placeholder {
+.header__input::placeholder {
   color: #909090;
+}
+
+.header__star {
+  cursor: pointer;
 }
