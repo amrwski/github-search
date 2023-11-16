@@ -1,0 +1,15 @@
+.header {
+  height: 30px;
+  width: 100%;
+  padding: 4px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header__input {
+  border: none;
+  outline: none;
+  width: 300px;
+}

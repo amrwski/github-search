@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../services/getUsersService";
-import { User } from "../Types/";
+import { User } from "../Types";
 
-export const UserSearch = () => {
+export const Search = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [searchInput, setSearchInput] = useState("");
 
@@ -24,10 +24,15 @@ export const UserSearch = () => {
   console.log(users);
 
   return (
-    <div>
-      <input placeholder="Search for GitHub users..." onChange={inputHandler} />
-
-      {x}
-    </div>
+    <>
+      <div className="header">
+        <input
+          className="header__input"
+          placeholder="Search for GitHub users..."
+          onChange={inputHandler}
+        />
+      </div>
+      <div>{x}</div>
+    </>
   );
 };

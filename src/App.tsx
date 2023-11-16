@@ -1,10 +1,10 @@
-import "./App.css";
-import { UserSearch } from "./components/UserSearch";
+import { Search } from "./components/Search";
+import "./styles";
 
 const App = () => {
   return (
     <div className="App">
-      <UserSearch />
+      <Search />
     </div>
   );
 };
