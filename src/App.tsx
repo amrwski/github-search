@@ -1,10 +1,10 @@
 import "./App.css";
-import { SearchBar } from "./components/SearchBar";
+import { UserSearch } from "./components/UserSearch";
 
 const App = () => {
   return (
     <div className="App">
-      <SearchBar />
+      <UserSearch />
     </div>
   );
 };
