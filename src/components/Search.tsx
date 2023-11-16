@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../services/getUsersService";
-import { User } from "../Types";
+import { SearchIcon } from "../assets/SearchIcon";
+import { User } from "../types";
 
 export const Search = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -26,12 +27,16 @@ export const Search = () => {
   return (
     <>
       <div className="header">
-        <input
-          className="header__input"
-          placeholder="Search for GitHub users..."
-          onChange={inputHandler}
-        />
+        <div className="container">
+          <SearchIcon />
+          <input
+            className="container__input"
+            placeholder="Search for GitHub users..."
+            onChange={inputHandler}
+          />
+        </div>
       </div>
+
       <div>{x}</div>
     </>
   );
