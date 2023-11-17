@@ -1,4 +1,11 @@
 .listItem {
-  width: fit-content;
-  border: 1px red solid;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 358px;
+  padding: 14px;
+  align-items: flex-start;
+  gap: 10px;
+
+  outline: 1px solid red;
 }

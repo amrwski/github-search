@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "../services/getUsersService";
 import { SearchIcon } from "../assets/SearchIcon";
-import { IUser } from "../types";
 import { StarUncheckedIcon } from "../assets/StarUncheckedIcon";
 import { StarCheckedIcon } from "../assets/StarCheckedIcon";
-import { UserList } from "./UserList";
+import { useUserContext } from "../context/UserContext";
 
 export const Search = () => {
-  const [users, setUsers] = useState<IUser[]>([]);
   const [searchInput, setSearchInput] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const { setUsers } = useUserContext();
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
@@ -22,7 +21,7 @@ export const Search = () => {
     };
 
     fetchData();
-  }, [searchInput]);
+  }, [searchInput, setUsers]);
 
   return (
     <>
@@ -39,8 +38,6 @@ export const Search = () => {
           </div>
         </div>
       </div>
-
-      <UserList users={users} />
     </>
   );
 };

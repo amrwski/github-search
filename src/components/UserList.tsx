@@ -7,7 +7,11 @@ interface IUserList {
 }
 
 export const UserList: FC<IUserList> = ({ users }) => {
-  const userList = users && Object.values(users).map((user) => <UserListItem login={user.login} />);
+  const userList =
+    users &&
+    Object.values(users).map(({ login, id, avatar_url }) => (
+      <UserListItem key={id} login={login} avatar={avatar_url} />
+    ));
 
   return <>{userList}</>;
 };
