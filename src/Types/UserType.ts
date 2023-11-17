@@ -1,4 +1,4 @@
-export type User = {
+export interface IUser {
   avatar_url: string;
   events_url: string;
   followers_url: string;
@@ -18,4 +18,4 @@ export type User = {
   subscriptions_url: string;
   type: string;
   url: string;
-};
+}
