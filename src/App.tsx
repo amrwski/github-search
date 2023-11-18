@@ -1,17 +1,16 @@
-import { Search } from "./components/Search";
-import { UserList } from "./components/UserList";
-import { useUserContext } from "./context/UserContext";
+import { FC } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles";
+import { HomePage } from "./components/HomePage";
+import { UserDetail } from "./components/UserDetail";
 
-const App = () => {
-  const { users } = useUserContext();
-
-  return (
-    <>
-      <Search />
-      <UserList users={users} />
-    </>
-  );
-};
+const App: FC = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/user/:username" element={<UserDetail />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
