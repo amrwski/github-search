@@ -27,12 +27,14 @@ export const Search = () => {
     <>
       <div className="header">
         <div className="header__container">
-          <SearchIcon />
-          <input
-            className="header__input"
-            placeholder="Search for GitHub users..."
-            onChange={inputHandler}
-          />
+          <div className="header__search">
+            <SearchIcon />
+            <input
+              className="header__input"
+              placeholder="Search for GitHub users..."
+              onChange={inputHandler}
+            />
+          </div>
           <div className="header__star" onClick={() => setIsChecked(!isChecked)}>
             {isChecked ? <StarCheckedIcon /> : <StarUncheckedIcon />}
           </div>

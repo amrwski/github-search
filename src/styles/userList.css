@@ -1,0 +1,7 @@
+.userList {
+  width: 100%;
+  margin: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

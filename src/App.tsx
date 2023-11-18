@@ -7,10 +7,10 @@ const App = () => {
   const { users } = useUserContext();
 
   return (
-    <div className="App">
+    <>
       <Search />
       <UserList users={users} />
-    </div>
+    </>
   );
 };
 
