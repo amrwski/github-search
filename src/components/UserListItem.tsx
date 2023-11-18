@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { StarUncheckedIcon } from "../assets/StarUncheckedIcon";
+import { StarUncheckedIcon } from "../assets";
 
 interface IUserListItem {
   login: string;

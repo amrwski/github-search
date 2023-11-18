@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { getUsers } from "../services/getUsersService";
-import { SearchIcon } from "../assets/SearchIcon";
-import { StarUncheckedIcon } from "../assets/StarUncheckedIcon";
-import { StarCheckedIcon } from "../assets/StarCheckedIcon";
-import { useUserContext } from "../context/UserContext";
+import { getUsers } from "../services";
+import { SearchIcon, StarUncheckedIcon, StarCheckedIcon } from "../assets";
+import { useUserContext } from "../context";
 
 export const Search = () => {
   const [searchInput, setSearchInput] = useState("");

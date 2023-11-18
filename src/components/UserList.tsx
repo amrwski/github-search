@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { UserListItem } from "./UserListItem";
-import { IUser } from "../types";
+import { IUserItem } from "../types";
 
 interface IUserList {
-  users: IUser[];
+  users: IUserItem[];
 }
 
 export const UserList: FC<IUserList> = ({ users }) => {

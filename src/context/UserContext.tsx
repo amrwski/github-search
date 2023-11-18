@@ -1,15 +1,15 @@
 import { createContext, useContext, ReactNode, useState, Dispatch, SetStateAction, FC } from "react";
-import { IUser } from "../types";
+import { IUserItem } from "../types";
 
-interface IUserContex {
-  users: IUser[];
-  setUsers: Dispatch<SetStateAction<IUser[]>>;
+interface IUserContext {
+  users: IUserItem[];
+  setUsers: Dispatch<SetStateAction<IUserItem[]>>;
 }
 
-const UserContext = createContext<IUserContex | undefined>(undefined);
+const UserContext = createContext<IUserContext | undefined>(undefined);
 
 export const UserProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [users, setUsers] = useState<IUser[]>([]);
+  const [users, setUsers] = useState<IUserItem[]>([]);
 
   return <UserContext.Provider value={{ users, setUsers }}>{children}</UserContext.Provider>;
 };

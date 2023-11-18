@@ -1,5 +1,4 @@
-const url = "https://api.github.com";
-const token = import.meta.env.VITE_GITHUB_API_TOKEN;
+import { url, token } from "./config";
 
 export const getUsers = async (searchQuery: string) => {
   if (searchQuery.length > 2) {

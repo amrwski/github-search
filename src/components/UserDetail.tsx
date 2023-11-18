@@ -1,7 +1,24 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getUserDetails } from "../services";
+import { IUserDetails } from "../types";
+
 export const UserDetail = () => {
+  const [userDetails, setUserDetails] = useState<IUserDetails>();
+  const { username } = useParams<{ username: string }>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const userInfo = username && (await getUserDetails(username));
+      setUserDetails(userInfo);
+    };
+
+    fetchData();
+  }, [username]);
+
   return (
     <div className="userContainer">
-      <img className="userContainer__img" src="" alt="User avatar" />
+      <img className="userContainer__img" src={userDetails?.avatar_url} alt="User avatar" />
       <div className="userContainer__info">
         <div className="info__name"></div>
         <div className="info__login"></div>
