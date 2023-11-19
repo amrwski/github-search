@@ -1,2 +1,3 @@
 export * from "./getUsers";
-export * from "./getUserDetails";
+export * from "./getUserByName";
+export * from "./getUsersById";

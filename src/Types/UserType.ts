@@ -54,3 +54,8 @@ export interface IUserDetails {
   created_at: string;
   updated_at: string;
 }
+
+export interface IFavouriteItem {
+  id: string;
+  isFavourite: boolean;
+}

@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { UserProvider } from "./context/UserContext";
+import { FavouriteProvider, UserProvider } from "./context";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <App />
+      <FavouriteProvider>
+        <App />
+      </FavouriteProvider>
     </UserProvider>
   </React.StrictMode>
 );

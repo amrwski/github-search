@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getUserDetails } from "../services";
+import { getUserByName } from "../services";
 import { IUserDetails } from "../types";
 import { StarUncheckedIcon } from "../assets";
 import { UserStats } from "./UserStats";
@@ -11,7 +11,7 @@ export const UserDetail = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const userInfo = username && (await getUserDetails(username));
+      const userInfo = username && (await getUserByName(username));
       setUserDetails(userInfo);
     };
 

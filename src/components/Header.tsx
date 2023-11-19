@@ -1,14 +1,15 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useFavouriteContext } from "../context/FavouriteContext";
 import { StarCheckedIcon, StarUncheckedIcon } from "../assets";
 import { SearchBar } from "./SearchBar";
 import { NavBar } from "./NavBar";
 
 export const Header = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const { showFavourites, setShowFavourites } = useFavouriteContext();
   const location = useLocation();
 
   const isDetailView = location.pathname.includes("/user");
+  const isFavouriteView = location.pathname.includes("/favourites");
 
   return (
     <>
@@ -16,11 +17,11 @@ export const Header = () => {
         <div className="header__container">
           {isDetailView ? <NavBar /> : <SearchBar />}
           <Link
-            to={!isChecked ? "/favourites" : "/"}
+            to={!showFavourites ? "/favourites" : "/"}
             className="header__star"
-            onClick={() => setIsChecked(!isChecked)}
+            onClick={() => setShowFavourites(!showFavourites)}
           >
-            {isChecked ? <StarCheckedIcon /> : <StarUncheckedIcon />}
+            {isFavouriteView ? <StarCheckedIcon /> : <StarUncheckedIcon />}
           </Link>
         </div>
       </div>

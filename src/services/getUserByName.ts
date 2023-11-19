@@ -1,6 +1,6 @@
 import { url, token } from "./config";
 
-export const getUserDetails = async (username: string) => {
+export const getUserByName = async (username: string) => {
   try {
     const response = await fetch(`${url}/users/${username}`, {
       headers: {

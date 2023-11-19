@@ -1,26 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { UserListItem } from "./UserListItem";
 import { useUserContext } from "../context";
 
 export const UserList: FC = () => {
-  const [favourites, setFavourites] = useState<
-    {
-      id: string;
-      isFavourite: boolean;
-    }[]
-  >([]);
   const { users } = useUserContext();
-
-  useEffect(() => {
-    const storedFavourites = Object.keys(localStorage).map((key) => ({
-      id: key.split("_")[1],
-      isFavourite: localStorage.getItem(key) === "true",
-    }));
-
-    setFavourites(storedFavourites);
-  }, []);
-
-  console.log(favourites);
 
   const userList =
     users &&
