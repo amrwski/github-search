@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.12);
+}
+
+.header__container {
+  width: 572px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+}
+
+.header__input::placeholder {
+  color: #909090;
+}
+
+.header__star {
+  cursor: pointer;
+  width: fit-content;
+}

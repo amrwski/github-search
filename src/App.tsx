@@ -1,13 +1,13 @@
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./styles";
-import { SearchBar } from "./components/SearchBar";
+import { Header } from "./components/Header";
 import { UserList } from "./components/UserList";
 import { UserDetail } from "./components/UserDetail";
 
 const App: FC = () => (
   <BrowserRouter>
-    <SearchBar />
+    <Header />
     <Routes>
       <Route path="/" element={<UserList />} />
       <Route path="/user/:username" element={<UserDetail />} />

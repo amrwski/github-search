@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import { getUsers } from "../services";
-import { SearchIcon, StarUncheckedIcon, StarCheckedIcon } from "../assets";
+import { useState, useEffect } from "react";
 import { useUserContext } from "../context";
+import { SearchIcon } from "../assets";
+import { getUsers } from "../services";
 
 export const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
   const { setUsers } = useUserContext();
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,22 +21,13 @@ export const SearchBar = () => {
   }, [searchInput, setUsers]);
 
   return (
-    <>
-      <div className="header">
-        <div className="header__container">
-          <div className="header__search">
-            <SearchIcon />
-            <input
-              className="header__input"
-              placeholder="Search for GitHub users..."
-              onChange={inputHandler}
-            />
-          </div>
-          <div className="header__star" onClick={() => setIsChecked(!isChecked)}>
-            {isChecked ? <StarCheckedIcon /> : <StarUncheckedIcon />}
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="searchBar">
+      <SearchIcon />
+      <input
+        className="searchBar__input"
+        placeholder="Search for GitHub users..."
+        onChange={inputHandler}
+      />
+    </div>
   );
 };

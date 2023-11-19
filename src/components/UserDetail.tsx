@@ -18,8 +18,6 @@ export const UserDetail = () => {
     fetchData();
   }, [username]);
 
-  console.log(userDetails);
-
   const { avatar_url, name, login, bio, followers, following, public_repos } = userDetails || {};
 
   return (
