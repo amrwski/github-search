@@ -2,12 +2,13 @@ import { FC, useCallback, useEffect, useState } from "react";
 import { UserListItem } from "./UserListItem";
 import { useUserContext } from "../context";
 import { getUsers } from "../services";
+import { useDebounce } from "../hooks/useDebounce";
 
 export const UserList: FC = () => {
   const { users, setUsers, searchInput } = useUserContext();
   const [page, setPage] = useState(1);
 
-  const fetchMoreUsers = useCallback(async () => {
+  const fetchMoreUsers = async () => {
     try {
       const newUsers = await getUsers(searchInput, page + 1);
 
@@ -18,23 +19,25 @@ export const UserList: FC = () => {
     } catch (error) {
       console.error("Error fetching more users:", error);
     }
-  }, [searchInput, page, setUsers]);
+  };
+
+  const debouncedFetch = useDebounce(fetchMoreUsers, 300);
+
+  const handleScroll = useCallback(() => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement || document.body;
+
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+      debouncedFetch();
+    }
+  }, [debouncedFetch]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
-
-      if (scrollTop + clientHeight >= scrollHeight - 10) {
-        fetchMoreUsers();
-      }
-    };
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [fetchMoreUsers]);
+  }, [handleScroll]);
 
   const userList =
     users &&
