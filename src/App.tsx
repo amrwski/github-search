@@ -4,6 +4,7 @@ import "./styles";
 import { Header } from "./components/Header";
 import { UserList } from "./components/UserList";
 import { UserDetail } from "./components/UserDetail";
+import { FavouriteList } from "./components/FavouriteList";
 
 const App: FC = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const App: FC = () => (
     <Routes>
       <Route path="/" element={<UserList />} />
       <Route path="/user/:username" element={<UserDetail />} />
+      <Route path="/favourites" element={<FavouriteList />} />
     </Routes>
   </BrowserRouter>
 );

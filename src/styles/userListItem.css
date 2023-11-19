@@ -54,3 +54,7 @@
 .listItem__login {
   margin: 0 10px;
 }
+
+.listItem__favourite {
+  display: flex;
+}
