@@ -1,8 +1,9 @@
 import { FC, useCallback, useEffect, useState } from "react";
+import PullToRefresh from "react-simple-pull-to-refresh";
 import { UserListItem } from "./UserListItem";
 import { useUserContext } from "../context";
 import { getUsers } from "../services";
-import { useDebounce } from "../hooks/useDebounce";
+import { useDebounce } from "../hooks";
 
 export const UserList: FC = () => {
   const { users, setUsers, searchInput } = useUserContext();
@@ -47,5 +48,9 @@ export const UserList: FC = () => {
 
   const noResults = <span>No search results...</span>;
 
-  return <div className="userList">{userList || noResults}</div>;
+  return (
+    <PullToRefresh onRefresh={() => getUsers(searchInput)}>
+      <div className="userList">{userList || noResults}</div>
+    </PullToRefresh>
+  );
 };

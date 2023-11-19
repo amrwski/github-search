@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getUserByName } from "../services";
 import { IUserDetails } from "../types";
-import { StarUncheckedIcon } from "../assets";
+import { StarCheckedIcon, StarUncheckedIcon } from "../assets";
 import { UserStats } from "./UserStats";
 
 export const UserDetail = () => {
   const [userDetails, setUserDetails] = useState<IUserDetails | null>(null);
+  const [isFavourite, setIsFavourite] = useState(false);
   const { username } = useParams<{ username: string }>();
+  const { avatar_url, name, login, bio, followers, following, public_repos, id } = userDetails || {};
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,7 +20,15 @@ export const UserDetail = () => {
     fetchData();
   }, [username]);
 
-  const { avatar_url, name, login, bio, followers, following, public_repos } = userDetails || {};
+  useEffect(() => {
+    const storedFavourite = localStorage.getItem(`favourite_${id}`);
+    setIsFavourite(!!storedFavourite && JSON.parse(storedFavourite));
+  }, [id]);
+
+  const toggleFavourite = () => {
+    setIsFavourite(!isFavourite);
+    localStorage.setItem(`favourite_${id}`, JSON.stringify(!isFavourite));
+  };
 
   return (
     <div className="detailWrapper">
@@ -36,9 +46,7 @@ export const UserDetail = () => {
             </div>
           </div>
         </div>
-        <div className="userContainer_star">
-          <StarUncheckedIcon />
-        </div>
+        <div onClick={toggleFavourite}>{isFavourite ? <StarCheckedIcon /> : <StarUncheckedIcon />}</div>
       </div>
     </div>
   );
