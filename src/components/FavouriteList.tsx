@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { IUserDetails } from "../types";
 import { getUsersById } from "../services";
+import { UserListItem } from "./UserListItem";
 
 export const FavouriteList = () => {
   const [localFavourites, setLocalFavourites] = useState<number[]>([]);
@@ -32,15 +33,13 @@ export const FavouriteList = () => {
     fetchData();
   }, [localFavourites]);
 
-  console.log(fetchedFavourites);
+  const favouriteList =
+    fetchedFavourites &&
+    Object.values(fetchedFavourites).map(({ login, id, avatar_url }) => (
+      <UserListItem key={id} login={login} avatar={avatar_url} id={id} />
+    ));
 
-  return (
-    <div className="header">
-      <div className="header__container">
-        <div className="favourites">
-          <ul>{fetchedFavourites?.map((id) => <li>{id.login}</li>)}</ul>
-        </div>
-      </div>
-    </div>
-  );
+  const noFavourites = <span>You don't have favourites yet...</span>;
+
+  return <div className="userList">{favouriteList || noFavourites}</div>;
 };

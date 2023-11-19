@@ -27,7 +27,13 @@ export const UserListItem: FC<IUserListItem> = ({ login, avatar, id }) => {
         <img className="listItem__img" src={avatar} alt="User avatar" />
         <span className="listItem__login">{`@${login}`}</span>
       </div>
-      <div className="listItem__favourite" onClick={toggleFavourite}>
+      <div
+        className="listItem__favourite"
+        onClick={(e) => {
+          e.preventDefault();
+          toggleFavourite();
+        }}
+      >
         {isFavourite ? <StarCheckedIcon /> : <StarUncheckedIcon />}
       </div>
     </Link>

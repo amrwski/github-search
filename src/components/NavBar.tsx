@@ -12,7 +12,7 @@ export const NavBar = () => {
       <div className="navBar__container" onClick={() => navigate(-1)}>
         <BackArrowIcon />
       </div>
-      <span className="navBar__name">{`@${userName}`}</span>
+      <span className="navBar__name">{userName ? `@${userName}` : "Favorites"}</span>
     </div>
   );
 };

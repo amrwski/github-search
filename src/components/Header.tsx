@@ -15,7 +15,7 @@ export const Header = () => {
     <>
       <div className="header">
         <div className="header__container">
-          {isDetailView ? <NavBar /> : <SearchBar />}
+          {isDetailView || isFavouriteView ? <NavBar /> : <SearchBar />}
           <Link
             to={!showFavourites ? "/favourites" : "/"}
             className="header__star"
