@@ -12,7 +12,7 @@ export const getUsersById = async (userIds: number[]) => {
 
       return response.json();
     } catch (error) {
-      console.error(error.message);
+      console.error("Error fetching users:", error);
     }
   });
   const users: IUserDetails[] = await Promise.all(userPromises);
