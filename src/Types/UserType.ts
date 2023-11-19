@@ -40,12 +40,12 @@ export interface IUserDetails {
   type: string;
   site_admin: boolean;
   name: string;
-  company: string;
+  company?: string;
   blog: string;
   location: string;
   email?: string;
   hireable?: string;
-  bio: string;
+  bio?: string;
   twitter_username?: string;
   public_repos: number;
   public_gists: number;

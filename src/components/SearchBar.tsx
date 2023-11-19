@@ -3,7 +3,7 @@ import { getUsers } from "../services";
 import { SearchIcon, StarUncheckedIcon, StarCheckedIcon } from "../assets";
 import { useUserContext } from "../context";
 
-export const Search = () => {
+export const SearchBar = () => {
   const [searchInput, setSearchInput] = useState("");
   const [isChecked, setIsChecked] = useState(false);
   const { setUsers } = useUserContext();

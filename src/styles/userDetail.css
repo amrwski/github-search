@@ -1,7 +1,53 @@
+.detailWrapper {
+  display: flex;
+  justify-content: center;
+}
+
 .userContainer {
   width: 572px;
-  height: 155px;
+  margin: 14px 0;
   padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
-  outline: 1px red solid;
+.userContainer__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 7px;
+  object-fit: cover;
+}
+
+.userContainer__info {
+  width: 100%;
+  margin: 0 14px;
+}
+
+.userContainer__infoWrapper {
+  display: flex;
+  width: 100%;
+}
+
+.info__name {
+  font-size: 28px;
+  line-height: 150%;
+  height: 42px;
+}
+
+.info__login {
+  color: var(--Blue-2, #2d9cdb);
+  font-size: 14px;
+}
+
+.info__bio {
+  color: #8d8d8d;
+  height: 21px;
+  margin-bottom: 21px;
+}
+
+.info__stats {
+  display: flex;
 }

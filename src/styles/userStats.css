@@ -1,0 +1,20 @@
+.statsContainer {
+  line-height: 150%;
+  margin-right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statsContainer__number {
+  font-size: 28px;
+  line-height: 150%;
+}
+
+.statsContainer__label {
+  color: #8d8d8d;
+  font-size: 10px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+  text-transform: uppercase;
+}

@@ -1,12 +1,10 @@
 import { FC } from "react";
 import { UserListItem } from "./UserListItem";
-import { IUserItem } from "../types";
+import { useUserContext } from "../context";
 
-interface IUserList {
-  users: IUserItem[];
-}
+export const UserList: FC = () => {
+  const { users } = useUserContext();
 
-export const UserList: FC<IUserList> = ({ users }) => {
   const userList =
     users &&
     Object.values(users).map(({ login, id, avatar_url }) => (
