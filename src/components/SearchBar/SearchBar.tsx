@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useUserContext } from "../../context";
-import { SearchIcon } from "../../assets";
+import { SearchIcon } from "../../icons";
 import { getUsers } from "../../services";
 
 export const SearchBar = () => {

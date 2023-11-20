@@ -18,6 +18,6 @@
     "types": ["jest", "node", "vite/client"],
     "useUnknownInCatchVariables": false
   },
-  "include": ["src", "tests", "node_modules/vite-plugin-pwa/client.d.ts"],
+  "include": ["src", "src/tests", "node_modules/vite-plugin-pwa/client.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

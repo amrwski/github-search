@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useFavouriteContext } from "../../context";
-import { StarCheckedIcon, StarUncheckedIcon } from "../../assets";
+import { StarCheckedIcon, StarUncheckedIcon } from "../../icons";
 import { NavBar, SearchBar } from "../../components";
 
 export const Header = () => {
