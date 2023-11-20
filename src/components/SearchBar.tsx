@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useUserContext } from "../context";
 import { SearchIcon } from "../assets";
 import { getUsers } from "../services";
 
 export const SearchBar = () => {
   const { searchInput, setSearchInput, setUsers } = useUserContext();
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
@@ -19,12 +20,19 @@ export const SearchBar = () => {
     fetchData();
   }, [searchInput, setUsers]);
 
+  useEffect(() => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchInput]);
+
   return (
     <div className="searchBar">
       <SearchIcon />
       <input
         className="searchBar__input"
         placeholder="Search for GitHub users..."
+        ref={searchInputRef}
         value={searchInput}
         onChange={inputHandler}
       />
