@@ -1,3 +1,16 @@
+@media screen and (max-width: 630px) {
+  .listItem {
+    height: 75% !important;
+    padding: 8px !important;
+  }
+
+  .listItem,
+  .listItem::after {
+    width: 50% !important;
+    min-width: 244px !important;
+  }
+}
+
 .listItem {
   background: #fff;
   display: flex;

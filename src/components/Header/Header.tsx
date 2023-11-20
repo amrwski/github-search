@@ -18,6 +18,7 @@ export const Header = () => {
           <Link
             to={!showFavourites ? "/favourites" : "/"}
             className="header__star"
+            data-testid="star-icon"
             onClick={() => setShowFavourites(!showFavourites)}
           >
             {isFavouriteView ? <StarCheckedIcon /> : <StarUncheckedIcon />}

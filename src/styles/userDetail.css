@@ -1,3 +1,21 @@
+@media screen and (max-width: 630px) {
+  .userContainer {
+    width: 320px !important;
+    height: 320px;
+  }
+
+  .userContainer__infoWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .userContainer__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .detailWrapper {
   display: flex;
   justify-content: center;

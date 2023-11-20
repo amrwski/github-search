@@ -32,6 +32,7 @@ export const SearchBar = () => {
       <input
         className="searchBar__input"
         placeholder="Search for GitHub users..."
+        data-testid="search-input"
         ref={searchInputRef}
         value={searchInput}
         onChange={inputHandler}
