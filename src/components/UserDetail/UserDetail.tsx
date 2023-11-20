@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getUserByName } from "../services";
-import { IUserDetails } from "../types";
-import { StarCheckedIcon, StarUncheckedIcon } from "../assets";
-import { UserStats } from "./UserStats";
+import { getUserByName } from "../../services";
+import { IUserDetails } from "../../types";
+import { StarCheckedIcon, StarUncheckedIcon } from "../../assets";
+import { UserStats } from "../../components";
 
 export const UserDetail = () => {
   const [userDetails, setUserDetails] = useState<IUserDetails | null>(null);

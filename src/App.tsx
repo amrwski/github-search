@@ -1,10 +1,7 @@
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { FavouriteList, Header, UserDetail, UserList } from "./components";
 import "./styles";
-import { Header } from "./components/Header";
-import { UserList } from "./components/UserList";
-import { UserDetail } from "./components/UserDetail";
-import { FavouriteList } from "./components/FavouriteList";
 
 const App: FC = () => (
   <BrowserRouter>

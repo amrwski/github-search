@@ -1,8 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { useFavouriteContext } from "../context/FavouriteContext";
-import { StarCheckedIcon, StarUncheckedIcon } from "../assets";
-import { SearchBar } from "./SearchBar";
-import { NavBar } from "./NavBar";
+import { useFavouriteContext } from "../../context";
+import { StarCheckedIcon, StarUncheckedIcon } from "../../assets";
+import { NavBar, SearchBar } from "../../components";
 
 export const Header = () => {
   const { showFavourites, setShowFavourites } = useFavouriteContext();

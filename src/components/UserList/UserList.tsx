@@ -1,9 +1,9 @@
 import { FC, useCallback, useEffect, useState } from "react";
 import PullToRefresh from "react-simple-pull-to-refresh";
-import { UserListItem } from "./UserListItem";
-import { useUserContext } from "../context";
-import { getUsers } from "../services";
-import { useDebounce } from "../hooks";
+import { UserListItem } from "../../components";
+import { useUserContext } from "../../context";
+import { getUsers } from "../../services";
+import { useDebounce } from "../../hooks";
 
 export const UserList: FC = () => {
   const { users, setUsers, searchInput } = useUserContext();

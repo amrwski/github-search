@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { BackArrowIcon } from "../assets/BackArrowIcon";
+import { BackArrowIcon } from "../../assets/BackArrowIcon";
 
 export const NavBar = () => {
   const location = useLocation();

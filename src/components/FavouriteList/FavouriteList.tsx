@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { IUserDetails } from "../types";
-import { getUsersById } from "../services";
-import { UserListItem } from "./UserListItem";
+import { IUserDetails } from "../../types";
+import { getUsersById } from "../../services";
+import { UserListItem } from "../../components";
 
 export const FavouriteList = () => {
   const [localFavourites, setLocalFavourites] = useState<number[]>([]);
@@ -39,7 +39,7 @@ export const FavouriteList = () => {
       <UserListItem key={id} login={login} avatar={avatar_url} id={id} />
     ));
 
-  const noFavourites = <span>You don't have favourites yet...</span>;
+  const noFavourites = <span>You don't have any favourites yet...</span>;
 
   return <div className="userList">{favouriteList || noFavourites}</div>;
 };
