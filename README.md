@@ -1,4 +1,4 @@
-# work4all-challenge
+# github-search
 
 This React, TypeScript, and Vite application allows users to enter a search query and use the GitHub API to fetch and display a list of GitHub users, and mark selected users as favourites.
 
